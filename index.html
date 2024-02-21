@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .watch{
+            color: white;
+            font-size: 70px;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            text-align: center;
+        }
+        .mainbox{
+            background-color: rgb(39, 39, 39);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+       
+        .container{
+            background-color: rgb(202, 211, 202);
+            border: 20px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            width: 700px;
+        }
+       
+        .time{
+            padding: 10px 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="watch">Digital Watch</h1>
+    <div class="mainbox">
+        <div class="container">
+            <h1 class="time"></h1>
+        </div>
+    </div>
+</body>
+<script>
+    setInterval(digitalWatch, 1000);
+    function digitalWatch() {
+        let newDate = new Date();
+
+        let gtHours = newDate.getHours();
+
+        let gtMins = newDate.getMinutes();
+
+        let gtSec = newDate.getSeconds();
+
+        let standTime = `${gtHours} : ${gtMins} : ${gtSec}`;
+        document.querySelector(".time").textContent = standTime;
+    }
+</script>
+</html>
